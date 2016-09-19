@@ -1,0 +1,12 @@
+#!/bin/bash
+#Da permissao para o dono do arquivo
+var=`decode $1 $2`
+success='Password correct!'
+
+if [[ "$var" = "$success" ]]
+then
+   echo "Password correct! Access granted..."
+   chmod 700 $2
+else
+   echo "Password incorrect! Access denied..."
+fi
